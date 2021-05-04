@@ -1,0 +1,37 @@
+/* Colors
+=================== */
+$accent: #419ACC;
+$dark: #191919;
+$gray: #9B9A9A;
+$light-gray: #F6F6F8;
+$light-gray-alt:#DCDCDC;
+$light-blue:#81d1ff;
+$light:#F8FBFF;
+$border:#D5D5D5;
+$light-success:rgba(131, 255, 87, 0.67);
+$white: #fff;
+$gradient: linear-gradient(93.18deg, #44A0D3 0%, rgba(220, 220, 220, 0) 135.21%);
+/* Box shadow
+=================== */
+$shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+$shadow2: 1px 1px 4px 3px rgba(0, 0, 0, 0.25);
+/* Fonts
+=================== */
+
+$text: 'Poppins',
+sans-serif;
+$heading: 'Raleway',
+sans-serif;
+$text2: 'Open Sans',
+sans-serif;
+
+/* Media queries
+=================== */
+$laptop-xl:1600px;
+$laptop-lg:1400px;
+$laptop:1200px;
+$laptop-sm:1100px;
+$tablet: 995px;
+$mobile: 670px;
+$mobile-sm: 420px;
+$mobile-xs: 350px;

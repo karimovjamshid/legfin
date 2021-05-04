@@ -1,0 +1,186 @@
+/* General styles
+ ===================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $text;
+    font-size: 1.4rem;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1600px;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    font-family: $text2;
+    color: $gray;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-top: .7rem;
+
+    &--alt {
+        color: $dark;
+    }
+
+    @media(max-width: $laptop-xl) {
+        font-size: 1.6rem;
+    }
+
+    @media(max-width: $laptop-lg) {
+        font-size: 1.4rem;
+    }
+}
+
+.btn {
+    border: none;
+    font-family: $heading;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    padding: 1.2rem 2.5rem;
+    font-weight: 600;
+    color: $white;
+    border-radius: .3em;
+    background: $gradient;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .7), transparent);
+        transition: all .8s;
+    }
+
+    &:hover {
+        &::before {
+            left: 100%;
+        }
+
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &--bordered {
+        background: transparent;
+        border: 1px solid $accent;
+    }
+
+    &--alt {
+        box-shadow: $shadow;
+        border-radius: 1.5rem;
+        background: $accent;
+        padding: 0.7em 3.5em;
+        font-size: 1.4rem;
+    }
+
+}
+
+.input {
+    border: 1px solid $light-gray;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-family: $text;
+    width: 100%;
+
+    @media(max-width: $laptop-xl) {
+        font-size: 1.6rem;
+    }
+
+    @media(max-width: $laptop-lg) {
+        font-size: 1.4rem;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.section {
+    padding: 7rem 0;
+
+}
+
+
+.heading {
+    max-width: 840px;
+    text-align: center;
+    margin: 0 auto;
+
+    &__h3 {
+        font-weight: 700;
+        font-size: 3.2rem;
+        color: $dark;
+        line-height: 1.4;
+    }
+
+    &__decor {
+        max-width: 570px;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: flex;
+            max-width: 230px;
+            width: 100%;
+            background-color: $accent;
+            height: 2px;
+        }
+
+        &::after {
+            content: '';
+            display: flex;
+            max-width: 230px;
+            width: 100%;
+            background-color: $accent;
+            height: 2px;
+        }
+
+    }
+}

@@ -3,17 +3,14 @@
 // Sticky navbar
 let header = $('#header');
 let scrollPos = $(window).scrollTop();
-let miniNav = $('#mini-nav');
 
 $(window).on('scroll load resize', function(){
     scrollPos = $(this).scrollTop();
 
     if(scrollPos > 5){
         header.addClass('fixed');
-        miniNav.addClass('fixed');
     }else{
         header.removeClass('fixed');
-        miniNav.removeClass('fixed');
     }
 });
 
@@ -29,3 +26,19 @@ $("[data-scroll]").on('click', function(event){
   });
 
 });
+
+// *************** Burger menu ***************  
+const menuBtn = document.querySelector('.burger');
+const miniHeader = document.querySelector('.mini-header');
+const miniNavItem = document.querySelectorAll('.mini-nav__item');
+
+menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('burger__open');
+    miniHeader.classList.toggle('active');
+})
+miniNavItem.forEach(function (item) {
+    item.addEventListener('click', function () {
+    menuBtn.classList.remove('burger__open');
+    miniHeader.classList.remove('active');
+})
+})

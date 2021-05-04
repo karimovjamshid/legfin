@@ -80,6 +80,10 @@ li {
     position: relative;
     overflow: hidden;
 
+    @media(max-width: $tablet-lg) {
+        font-size: 1.6rem;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -155,6 +159,22 @@ li {
         font-size: 3.2rem;
         color: $dark;
         line-height: 1.4;
+
+        @media(max-width: $laptop-lg) {
+            font-size: 2.8rem;
+        }
+
+        @media(max-width: $laptop-sm) {
+            font-size: 2.6rem;
+        }
+
+        @media(max-width: $tablet) {
+            font-size: 2.2rem;
+        }
+
+        @media(max-width: $mobile) {
+            font-size: 2rem;
+        }
     }
 
     &__decor {

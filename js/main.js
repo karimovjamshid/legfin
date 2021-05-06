@@ -42,3 +42,14 @@ miniNavItem.forEach(function (item) {
     miniHeader.classList.remove('active');
 })
 })
+
+// Accordion
+const accordionQuestion = document.querySelectorAll('.accordion__heading');
+const accordionAnswer = document.querySelectorAll('.accordion__answer');
+
+accordionQuestion.forEach(function (item) {
+    item.addEventListener('click', function () {
+        this.nextElementSibling.classList.toggle('active');
+        this.querySelector(".accordion__plus").classList.toggle('active');
+    })
+})

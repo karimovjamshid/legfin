@@ -10,7 +10,7 @@
     right: 0;
     left: 0;
     z-index: 3000;
-    padding: 1rem 0;
+    padding: .7rem 0;
     transition: background-color .3s linear;
 
     @media(max-width: $tablet-sm) {
@@ -81,9 +81,13 @@
         color: $white;
         margin-left: 1rem;
         font-size: 1.5rem;
+        padding: .5rem .7rem;
+        border: 1px solid transparent;
+        border-radius: .5rem;
 
         &.active {
-            border-bottom: 2px solid $accent;
+            border-color: $accent;
+
         }
     }
 
@@ -180,6 +184,12 @@
 
     &__item {
         display: flex;
+        position: relative;
+
+        &:hover .submenu {
+            opacity: 1;
+            z-index: 2;
+        }
     }
 
     &__link {
@@ -246,6 +256,36 @@
 
         &.active {
             border-bottom: 2px solid $accent;
+        }
+    }
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $dark;
+    min-width: 110px;
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid $accent;
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s linear;
+
+    &__item {
+        margin-top: 1rem;
+        color: $white;
+        transition: color .3s linear;
+
+        &:first-child {
+            margin-top: 0;
+
+        }
+
+        &:hover {
+            color: $accent;
         }
     }
 }
@@ -491,21 +531,23 @@
         justify-content: space-between;
         align-items: center;
         padding: 2rem 0;
-        border-bottom: 2px solid $light-gray-alt;
+        border-bottom: 1px solid $light-gray-alt;
+        cursor: pointer;
     }
 
 
+
     &__h4 {
-        font-weight: 700;
+        font-weight: 600;
         font-size: 2rem;
         flex-basis: 80%;
 
-        @media(max-width: $laptop-lg) {
-            font-size: 1.8rem;
+        @media(max-width: $laptop-xl) {
+            font-size: 1.6rem;
         }
 
         @media(max-width: $tablet-lg) {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
     }
 
@@ -513,11 +555,25 @@
         flex-basis: 10%;
         display: flex;
         justify-content: flex-end;
+
+        img {
+            transition: transform .3s linear;
+
+            &.active {
+                transform: rotate(45deg);
+            }
+        }
+
     }
 
     &__answer {
         max-width: 850px;
-        margin: 2rem 0;
+        margin: 2rem 0 0;
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 }
 
@@ -619,8 +675,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 270px;
-    margin-left: -4.5rem;
+    max-width: 260px;
+    margin-left: -3.8rem;
 
     @media(max-width: $mobile-sm) {
         margin-left: 0;
@@ -641,7 +697,7 @@
         font-family: $text;
         font-size: 2rem;
         font-weight: 600;
-        padding: 1rem 4rem;
+        padding: .7rem 4rem;
         display: inline-block;
         border-radius: .5rem;
 
@@ -703,7 +759,11 @@
         font-weight: 600;
         margin-right: 3rem;
 
-        @media (max-width: 340px) {
+        @media (max-width: $tablet-sm) {
+            font-size: 1.4rem;
+        }
+
+        @media (max-width: $mobile-xs) {
             font-size: 1.2rem;
         }
     }
@@ -739,6 +799,7 @@
         textarea {
             resize: none;
             box-sizing: border-box;
+            height: 100px;
         }
     }
 
@@ -793,7 +854,7 @@
 
     &__text {
         flex-basis: 80%;
-        line-height: 1.4;
+        line-height: 1.7;
         font-weight: 500;
         font-size: 1.3rem;
 
@@ -808,6 +869,7 @@
         line-height: 1.7rem;
         transition: color .3s linear;
         display: block;
+        margin-top: 1rem;
 
         &:hover {
             color: $white;
@@ -824,6 +886,7 @@
 
     &__link {
         transition: transform .2s linear;
+
 
         &:hover {
             transform: translateY(-.3rem);
@@ -957,7 +1020,7 @@
 
     &__link {
         display: block;
-        margin-top: 1rem;
+        margin-top: 1.3rem;
     }
 
 
